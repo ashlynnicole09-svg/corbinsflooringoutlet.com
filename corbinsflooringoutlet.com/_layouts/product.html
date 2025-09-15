@@ -1,0 +1,38 @@
+﻿---
+layout: default
+---
+<article class="product">
+  <h1>{{ page.title }}</h1>
+
+  {% if page.roomvo and page.roomvo.product_ids %}
+  <a class="roomvo-btn"
+     href="https://www.roomvo.com/my/msi/?product_ids={{ page.roomvo.product_ids | join: "," }}&domain={{ site.roomvo_domain }}"
+     target="_blank" rel="noopener">See This In My Space</a>
+  {% endif %}
+
+  {% if page.image %}
+  <img class="product-hero" src="{{ page.image | relative_url }}" alt="{{ page.alt | default: page.title }}">
+  {% endif %}
+
+  <div class="specs">
+    <ul>
+      {% if page.specs.thickness_mm %}<li><b>Thickness:</b> {{ page.specs.thickness_mm }}mm</li>{% endif %}
+      {% if page.specs.wear_layer_mil %}<li><b>Wear Layer:</b> {{ page.specs.wear_layer_mil }} mil</li>{% endif %}
+      {% if page.specs.size_in %}<li><b>Plank Size:</b> {{ page.specs.size_in }}</li>{% endif %}
+      {% if page.core %}<li><b>Core:</b> {{ page.core }}</li>{% endif %}
+    </ul>
+  </div>
+
+  <section class="related">
+    <h2>More from {{ page.collection }}</h2>
+    <div class="catalog-grid">
+      {% assign siblings = site.products
+          | where: "collection", page.collection
+          | where: "lvp_type", page.lvp_type
+          | where: "category", page.category %}
+      {% for p in siblings limit: 8 %}
+        {% include product-card.html product=p %}
+      {% endfor %}
+    </div>
+  </section>
+</article>

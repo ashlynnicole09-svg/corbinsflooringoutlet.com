@@ -1,0 +1,16 @@
+﻿<article class="product-card">
+  {% if include.product.roomvo and include.product.roomvo.product_ids %}
+  <a class="roomvo-btn"
+     href="https://www.roomvo.com/my/msi/?product_ids={{ include.product.roomvo.product_ids | join: "," }}&domain={{ site.roomvo_domain }}"
+     target="_blank" rel="noopener">See This In My Space</a>
+  {% endif %}
+
+  <a class="thumb" href="{{ include.product.url | relative_url }}">
+    {% if include.product.image %}
+    <img src="{{ include.product.image | relative_url }}" alt="{{ include.product.alt | default: include.product.title }}">
+    {% endif %}
+  </a>
+
+  <div class="divider"></div>
+  <a class="name" href="{{ include.product.url | relative_url }}">{{ include.product.title }}</a>
+</article>

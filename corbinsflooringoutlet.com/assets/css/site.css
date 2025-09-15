@@ -1,0 +1,19 @@
+﻿:root{
+  --brand-tan:#9E7B4F;--brand-brown:#6F4A2E;--ink:#2B2B2B;--ink-on:#fff;--card:#fff;--border:#E6E2DC;
+}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink);background:#fff}
+.container{max-width:1200px;margin:auto;padding:24px}
+.site-header{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border)}
+.nav a{margin-left:12px;text-decoration:none;color:var(--ink)}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,minmax(230px,1fr));gap:22px}
+@media(max-width:1180px){.catalog-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.catalog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.catalog-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+.product-card{border:1px solid var(--border);border-radius:14px;background:var(--card);box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.10)}
+.roomvo-btn{display:block;width:100%;text-align:center;text-decoration:none;background:var(--brand-tan);color:var(--ink-on);font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.7rem .75rem;line-height:1}
+.roomvo-btn:hover{background:color-mix(in oklab,var(--brand-tan) 85%,var(--brand-brown))}
+.thumb img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f7f7f7}
+.divider{height:1px;background:var(--border)}
+.name{display:block;text-align:center;text-decoration:none;color:var(--brand-tan);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.95rem .75rem 1.1rem}
+.product-hero{max-width:900px;width:100%;display:block;margin:16px 0;border:1px solid var(--border);border-radius:12px}

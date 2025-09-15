@@ -1,0 +1,16 @@
+﻿---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+<div class="catalog-grid">
+  {% comment %} universal 'subtype' with backward compatibility {% endcomment %}
+  {% assign want_subtype = page.subtype | default: page.lvp_type | default: page.wood_type %}
+  {% assign items = site.products | where: "collection", page.collection | where: "category", page.category %}
+  {% if want_subtype %}
+    {% assign items = items | where: "subtype", want_subtype %}
+  {% endif %}
+  {% for p in items %}
+    {% include product-card.html product=p %}
+  {% endfor %}
+</div>

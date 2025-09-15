@@ -1,0 +1,22 @@
+﻿title: Floorishing Homes
+url: https://example.com
+baseurl: ""
+theme: null
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  products:
+    output: true
+    permalink: /products/:category/:subtype/:collection/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: product
+
+roomvo_domain: "www.corbinsflooringoutlet.com"
+
