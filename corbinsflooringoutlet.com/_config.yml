@@ -1,6 +1,6 @@
-﻿title: Floorishing Homes
-url: https://example.com
-baseurl: ""
+﻿title: Corbin's Flooring Outlet
+url: https://ashlynnicole09-svg.github.io
+baseurl: "/corbinsflooringoutlet.com"
 theme: null
 plugins:
   - jekyll-sitemap
@@ -19,4 +19,5 @@ defaults:
       layout: product
 
 roomvo_domain: "www.corbinsflooringoutlet.com"
+
 
